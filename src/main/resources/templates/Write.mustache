@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사계</title>
+    <link rel= "stylesheet" type="text/css" href="/css/Write.css">
+    <base href="/" />
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+        <span class="avatar"><img src="/Image/booktop2.png" alt="" /></span>
+        <h1>당신과 함께 <strong>새로운 계절</strong>을 나눌 수 있는 <a href="Home.html">사계</a><br><br>
+            <strong>계절의 경험을 나누다.</strong></h1>
+    </header>
+
+    <!-- Main -->
+    <section id="main">
+        <!-- Thumbnails -->
+        <section class="thumbnails">
+            <div id = "board">
+                <h3>글쓰기</h3>
+                <form action="Write/create" method="post" enctype="multipart/form-data">
+                    <div class = "form-group">
+                        <label for="title">제목 : </label>
+                        <input type="text" class="form-control-title" id=title name="title">
+                    </div>
+                    <div id="root">
+                        <h2 class="title">파일 업로드</h2>
+                        <hr>
+                        <input type="file" name ="files" accept="image/*">
+                    </div>
+                    <div class = "form_group">
+                        <label for="comment">내용 : </label>
+                        <textarea class="form-control" rows="10" id="contnets" name="content"></textarea>
+                    </div>
+                    {{#user}}
+                    <div class = "form_group">
+                        <label for="comment">작성자 : </label>
+                        <input type="text" class="form-control-title" id=title name="id" readonly value="{{ID}}">
+                    </div>
+                    {{/user}}
+                    <button type="submit" class="btn btn-primary">글쓰기</button>
+                </form>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
+    </footer>
+
+</div>
+
+
+
+</body>
+</html>

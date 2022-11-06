@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+*{ text-decoration: none; list-style: none;}
+
+html{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Gowun Batang', serif;
+    background:url("/Image/bg2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body{
+    line-height: normal;
+    /* 줄 높이 */
+    font-size: 1.5vw;
+    font-family: 'Gowun Batang', serif;
+    margin: 0;
+}
+#bookpage{
+    width: 60vw;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    text-align: center;
+    align-items: center;
+}
+#bookpage #first{
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    background:transparent;
+    opacity: 1;
+    z-index: 1;
+    text-align: center;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    border-radius: 25px;
+    left: 25%;
+    top:80px;
+}
+#firstcontent{
+    width: 400px;
+    height: 600px;
+}
+#firstcontent img{
+    width: 100%;
+    height: 100%;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transform-origin: left center;
+}
+#bookpage #second{
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    background:url("/Image/photo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    font-size: 1vw;
+    z-index: 0;
+    text-align: center;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    border-radius: 25px;
+    top:80px;
+    opacity: 0;
+    left: 25%;
+}
+#second strong{
+    font-size:1.2vw;
+}
+#second img{
+    margin-top: 22%;
+}
+#first:hover ~ #bookpage{
+    margin-left: 420px;
+    margin-right: 420px;
+}
+#first:hover  img{
+    opacity: 0;
+    transform: rotateY(-180deg);
+}
+
+#first:hover ~ #second{
+    transform: scale(1.3) ;
+    opacity: 0.9;
+}
+
+
+#snav{
+    width: 100%;
+    height: 50%;
+}
+.snav{
+    width: 100%;
+    height: 100%;
+}
+
+/*로고관련 영역*/
+.logo{
+    width: 100%;
+    height: 25%;
+}
+/*로고 이미지 설정*/
+.logo a img{
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top:-70px;
+    left: 5px;
+}
+
+/*메뉴바 설정*/
+#menu {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#menu ul{
+    margin-top: 20vh;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+/*사이드 메뉴 정렬*/
+#sidemenu li{
+    transition: all .5s;
+    margin-top: 1.2vw;
+}
+#menu a{
+    color: white;
+}
+
+
+#menu:hover li{
+   transform: scale(.7);
+   filter: blur(8px);
+}
+#menu li:hover{
+    transform: scale(1.2);
+    filter: blur(0);
+}
+#Registerbtn{
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.5vw;
+}
+#Logoutbtn{
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.5vw;
+}
+#Logoutbtn:hover{
+    transform: scale(1.1);
+}
+#Loginbtn{
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.5vw;
+}
+
+#Loginbtn:hover{
+    transform: scale(1.1);
+}
+#Logoutbtn{
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.5vw;
+}
+#Logoutbtn:hover{
+    transform: scale(1.1);
+}
+/*회원가입 모달창*/
+.Registermodal{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Registermodal__overlay{
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.Registermodal__content{
+    background-color: white;
+    padding: 50px 80px;
+    position: relative;
+    border-radius: 50px;
+    width: 20%;
+    height: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    background : black;
+    opacity: 0.9;
+}
+.hidden{
+    display: none;
+}
+.Registertitle{
+    font-size: 32px; color: #fff;
+    text-align: center;
+}
+.Registermodal__content .assign{
+    display: inline-block;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.5vw;
+    height: 50px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(231, 238, 255, 0.3);
+    transition: .4s;
+    position: relative;
+    margin-top: 20px;
+    font-family: 'Gowun Batang', serif;
+}
+
+
+.assign:focus{
+    outline: 0;
+}
+.assign:hover{
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(231, 238, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/*로그인 모달창*/
+.logintitle{
+    font-size: 1.8vw; color: #fff;
+    text-align: center;
+}
+
+.info .Login{
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.5vw;
+    height: 50px;
+    border: none;
+    position: relative;
+    font-family: 'Gowun Batang', serif;
+    box-shadow: 0 4px 16px rgba(231, 238, 255, 0.3);
+    transition: .4s;
+}
+.info .Loginexit{
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.5vw;
+    height: 50px;
+    border: none;
+    position: relative;
+    font-family: 'Gowun Batang', serif;
+    margin-top: 10%;
+    box-shadow: 0 4px 16px rgba(231, 238, 255, 0.3);
+    transition: .4s;
+}
+.Login:focus{
+    outline: 0;
+}
+.Login:hover{
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(231, 238, 255, 0.6);
+    transform: scale(1.1);
+}
+.Loginexit:focus{
+    outline: 0;
+}
+.Loginexit:hover{
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(231, 238, 255, 0.6);
+    transform: scale(1.1);
+}
+.modal{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal__overlay{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.modal__content{
+    padding: 50px 80px;
+    position: relative;
+    border-radius: 50px;
+    width: 20%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    background : url("/Image/modalbg2.png");
+    background-size: contain;
+    opacity: 0.9;
+}
+.hidden{
+    display: none;
+}
+
+/*폼 정의*/
+.formdiv{
+    position: relative;
+    width: 150%;
+    left: -25%;
+}
+form{
+    width: 100%;
+    position: relative;
+}
+form input{
+    display: block;
+    width: 80%;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    font-size: 1.5vw;
+    color: white;
+    border-bottom: 2px solid rgb(97, 84, 84);
+    outline: none;
+}
+form label{
+    color: rgb(255, 255, 255);
+    background:transparent;
+    border-radius: 20px;
+    font-size: 1.5vw;
+}
+.int-area input{
+    margin-top: 5px;
+    margin-left: 10%;
+}
+.int-area label{
+    text-align: left;
+}
+.findPw{
+    text-align: center;
+    margin-top: 10%;
+}
+.findPw a{
+    font-size: 1vw;
+    color: white;
+    text-decoration: none;
+    transition: .4s;
+}
+
+/*로그인 모달창*/
+
+/*메뉴아이콘*/
+#menuicon{display: none; position: fixed;}
+.sidebar{width: 25%;height: 100%;background: #222;position: fixed ;top:0;left:-30%;z-index: 1;transition: all .35s;;}
+#menuicon + label {display:block;margin: 0.8%;width:3.5%;padding-top: 3.3%;position: fixed;}
+#menuicon + label span{display: block;position: absolute;width: 100%;height: 10%;border-radius: 30px;background: #000;transition: all .35s;}
+#menuicon + label span:nth-child(1){top: 0;}
+#menuicon + label span:nth-child(2){top:50%;transform: translateY(-50%);}
+#menuicon + label span:nth-child(3){bottom: 0;}
+#menuicon:checked + label{z-index: 2;}
+#menuicon:checked + label span{background: #fff;}
+#menuicon:checked + label span:nth-child(1){top: 50%;transform: translateY(-50%) rotate(45deg);}
+#menuicon:checked + label span:nth-child(2){opacity: 0;}
+#menuicon:checked + label span:nth-child(3){bottom: 50%;transform: translateY(50%) rotate(-45deg);}
+#menuicon:checked + label + div{left: 0;}
+
+
+#firstsentence{
+    opacity: 0;
+    transform:
+        translate3d(15rem,0rem,0)
+        skewX(50deg)
+        scale(1.5);
+    animation: smoky 5s;
+    animation-delay: 1s;
+    animation-fill-mode :forwards;
+}
+
+#secondsentence{
+    opacity: 0;
+    transform:
+        translate3d(15rem,0rem,0)
+        skewX(50deg)
+        scale(1.5);
+    animation: smoky 5s;
+    animation-delay: 2.5s;
+    animation-fill-mode :forwards;
+}
+
+#thirdsentence{
+    opacity: 0;
+    transform:
+        translate3d(15rem,0rem,0)
+        skewX(50deg)
+        scale(1.5);
+    animation: smoky 5s;
+    animation-delay: 4s;
+    animation-fill-mode :forwards;
+}
+
+#lastsentence{
+    opacity: 0;
+    transform:
+        translate3d(15rem,0rem,0)
+        skewX(50deg)
+        scale(1.5);
+    animation: smoky 5s;
+    animation-delay: 5.5s;
+    animation-fill-mode :forwards;
+    /* 애니메이션 최종상태로 고정 */
+}
+
+@keyframes smoky {
+    60% {
+      text-shadow: 0 0 40px whitesmoke;
+    }
+    to {
+        transform:
+        translate3d(0rem,0rem,0)
+        skewX(0deg)
+        scale(1);
+      text-shadow: 0 0 20px whitesmoke;
+      opacity: 1;
+
+    }
+  }

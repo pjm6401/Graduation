@@ -1,0 +1,148 @@
+/*회원가입 모달창*/
+.hidden{
+    display: none;
+}
+.Registermodal{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:99;
+}
+
+.Registermodal__overlay{
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.Registermodal__content{
+    background-color: white;
+    position: relative;
+    border-radius: 50px;
+    width: 20%;
+    height: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.Registertitle{
+    font-size: 32px; color: #fff;
+    text-align: center;
+}
+.Registermodal__content .assign{
+    display: inline-block;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.5vw;
+    height: 50px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(231, 238, 255, 0.3);
+    transition: .4s;
+    position: relative;
+    margin-top: 20px;
+    font-family: 'Gowun Batang', serif;
+}
+
+
+.assign:focus{
+    outline: 0;
+}
+.assign:hover{
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(231, 238, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/*로그인 모달창*/
+.logintitle{
+    font-size: 1.8vw; color: #fff;
+    text-align: center;
+}
+
+
+.info .Login{
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.5vw;
+    height: 50px;
+    border: none;
+    position: relative;
+    font-family: 'Gowun Batang', serif;
+    box-shadow: 0 4px 16px rgba(231, 238, 255, 0.3);
+    transition: .4s;
+}
+
+.Login:focus{
+    outline: 0;
+}
+.Login:hover{
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(231, 238, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.modal{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal__overlay{
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.modal__content{
+    position: relative;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),0 6px 6px rgba(0, 0, 0, 0.23);
+    background : white
+}
+.hidden{
+    display: none;
+}인
+.findPw{
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.findPw{
+    margin-top:1vw;
+}
+

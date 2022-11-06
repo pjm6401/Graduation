@@ -1,0 +1,42 @@
+<div class = "sidebar">
+    <div class = logo>
+        <a href="Home"><img src="/Image/sidelogowhite.png" alt="Logo"></a>
+    </div>
+    <nav id = "nav">
+        <div class ="snav">
+            <nav id = "menu">
+                <ul id = sidemenu>
+                    <li><a href="Main">사계</a></li>
+                    <li><a href="Board">게시판</a></li>
+                    <li><a href="">미디어</a></li>
+                    <li><a href="notice">공지사항</a></li>
+                    <!--로그인 창 html 페이지 아닌 모달창으로 -->
+
+                    {{#user}}
+                        <li><a href="/">{{ID}}</a></li>
+                        <li><a href="/logout/end" >로그아웃</a></li>
+                    {{/user}}
+
+                    {{#Manager}}
+                        <li><a href="/">{{ID}}</a></li>
+                        <li><a href="/logout/end" >로그아웃</a></li>
+                        <li><a href="/" >회원 정보 관리</a></li>
+                        <li><a href="MainWrite" >메인 뷰 등록</a></li>
+                    {{/Manager}}
+
+                    {{^user}}
+                        {{^Manager}}
+                            <!--Login Modal-->
+                            <li><a id = "Loginbtn">로그인</a></li>
+                            {{>Modal/Login}}
+                            <!--Register Modal-->
+                            <li><a id = "Registerbtn">회원가입</a></li>
+                            {{>Modal/Register}}
+                        {{/Manager}}
+                    {{/user}}
+
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>

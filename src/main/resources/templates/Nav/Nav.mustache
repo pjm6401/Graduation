@@ -1,0 +1,34 @@
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><button type="button" class="btn btn-light" onclick="location.href='/Home'" style="margin-right : 20px">홈</button></li>
+            <li><button type="button" class="btn btn-light" onclick="location.href='/Main' " style="margin-right : 20px">사계</button></li>
+            <li><button type="button" class="btn btn-light" onclick="location.href='/Board' " style="margin-right : 20px">게시판</button></li>
+
+            {{#Manager}}
+                <li><button type="button" class="btn btn-light" onclick=""  style="margin-right : 20px">회원 정보 관리</button></li>
+
+            {{/Manager}}
+        </ul>
+
+        <div class="col-md-3 text-end">
+            {{^user}}
+                {{^Manager}}
+                    <a class="btn btn-light" id = "Loginbtn" style="color : black">로그인</a>
+                    {{>Modal/Login2}}
+                    <a class="btn btn-light" id = "Registerbtn" style="color : black">회원가입</a>
+                    {{>Modal/Register}}
+                {{/Manager}}
+            {{/user}}
+            {{#user}}
+                <a class="btn btn-light" href="/">{{ID}}</a>
+                <a class="btn btn-outline-light me-2" href="/logout/end" >로그아웃</a>
+            {{/user}}
+            {{#Manager}}
+                <a class="btn btn-light" href="/">{{ID}}</a>
+                <a class="btn btn-outline-light me-2" href="/logout/end" >로그아웃</a>
+            {{/Manager}}
+        </div>
+    </header>
+</div>

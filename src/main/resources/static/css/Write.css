@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+*{ text-decoration: none; list-style: none;}
+html{
+    font-family: 'Gowun Batang', serif;
+
+    z-index: 0;
+}
+body{
+    line-height: normal;
+    /* 줄 높이 */
+    font-size: 1.5vw;
+    font-family: 'Gowun Batang', serif;
+    background:url("/Image/background3.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+form label{
+    font-size: 1.5vw;
+}
+form .form-control-title{
+    margin-left: 0.4%;
+    border: none;
+    width: 99%;
+    height: 4vh;
+    background-color: rgba(253, 253, 253, 0.5);
+}
+.form_group_file{
+    margin-top: 1%;
+}
+
+
+.form_group_file label{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    background-color: #4a4a4a;
+    color: #fff;
+    cursor: pointer;
+    line-height: 45px;
+    border-radius: 5px ;
+    text-align: center;
+}
+.form_group_file input[type="file"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+    padding: 0;
+}
+
+form .form-control-file border{
+    border: none;
+}
+form textarea{
+    margin-left: 0.4%;
+    display: inline-block;
+    background-color: rgba(253, 253, 253, 0.5);
+    border: none;
+    width: 99%;
+    height: 100%;
+}
+form button:hover{
+    color:#fff;
+    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+
+}
+form button{
+    display: inline-block;
+    background-color: rgba(253, 253, 253, 0.5);
+    margin-left: 47%;
+    border: none;
+    font-size: 1.5vw;
+    padding: 1vw;
+    border-radius: 35px;
+    font-family: 'Gowun Batang', serif;
+    margin-bottom: 1%;
+}
+#root {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+  }
+  .contents .upload-box {
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contents .upload-box .drag-file {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #dbdbdb;
+  }
+  .contents .upload-box .drag-file.highlight {
+    border: 3px dashed red;
+  }
+  .contents .upload-box .drag-file .image {
+    width: 40px;
+  }
+  .contents .upload-box .drag-file .message {
+    margin-bottom: 0;
+  }
+  .contents .upload-box .file-label {
+    margin-top: 30px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 65%;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .contents .upload-box .file {
+    display: none;
+  }
+
+  .contents .files {
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    overflow: auto;
+    height: 360px;
+  }
+  .contents .files .file {
+    display: flex;
+    padding: 20px 20px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  .contents .files .file:last-child {
+    margin-bottom: 0px;
+    border-bottom: none;
+  }
+
+  .contents .files .file .thumbnail {
+    display: flex;
+    flex: none;
+    width: 50px;
+    margin-right: 20px;
+    align-items: center;
+  }
+  .contents .files .file .thumbnail .image {
+    width: 100%;
+  }
+
+  .contents .files .file .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contents .files .file .details .header {
+    display: flex;
+  }
+  .contents .files .file .details .header .name {
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .contents .files .file .details .header .size {
+    margin-left: auto;
+  }
+
+  .contents .files .file .progress {
+    position: relative;
+    height: 6px;
+    background-color: #dbdbdb;
+    overflow: hidden;
+    margin-top: 4px;
+    border-radius: 10px;
+  }
+  .contents .files .file .progress .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #5b975b;
+  }
+
+  .contents .files .file .status {
+    display: flex;
+    width: 100%;
+  }
+  .contents .files .file .status .percent {
+  }
+  .contents .files .file .status .speed {
+    margin-left: auto;
+  }
+
+  @media(max-width: 700px) {
+    .contents {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+    .contents .upload-box {
+      width: 100%;
+      box-sizing: border-box;
+      margin-right: 0;
+    }
+    .contents .upload-box .drag-file {
+      height: 150px;
+    }
+    .contents .files {
+      width: 100%;
+      box-sizing: border-box;
+      margin-right: 0;
+      overflow: initial;
+    }
+  }
+#wrapper{
+  max-width:68rem;
+  margin:0 auto;
+}
+#header{
+  text-align: center;
+  padding-top:2rem;
+  padding-bottom: 6rem;
+}
+#header .avatar {
+  border-radius: 100%;
+  display:inline-block;
+  padding:0.5rem;
+  background-color: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.25);
+  margin: 2rem 0;
+  transition: 0.3s;
+}
+#header .avatar img{
+  border-radius: 100%;
+  display:block;
+}
+#header .avatar a:hover{
+    color: white;
+    transform: scale(1.07);
+}
+#header h1{
+  font-size:1.8rem;
+  color:rgba(255,255,255,0.5);
+  font-weight: 200;
+  margin-bottom: 1.5rem;
+  line-height: 2.3rem;
+}
+#header h1 strong{
+  color:white;
+  font-weight: 200;
+}
+#header h1 a{
+    color:rgba(255,255,255,0.5);
+    text-decoration: none;
+    border-bottom:1px dotted rgba(255,255,255,0.5);
+}
+
+#main .thumbnails {
+  display: flex;
+}
+#main .thumbnails>div{
+  flex-grow: 1;
+  margin-right:1rem;
+  margin-left:1rem;
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  background-color: rgba(245, 233, 208, 0.7);
+}
+
+
+#main .thumbnails h3{
+  border-left:1px solid rgba(255,255,255,0.3);
+  border-right:1px solid rgba(255,255,255,0.3);
+  border-bottom:1px solid rgba(255,255,255,0.3);
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  padding:1vw;
+  text-align: center;
+  background-color: rgba(255,255,255,0.1);
+  color:white;
+  font-size:1rem;
+  font-weight: 200;
+}
+
+#footer{
+  text-align: center;
+  color:rgba(255,255,255,0.5);
+  font-weight: 200;
+  padding-bottom: 3rem;
+    font-size:0.8rem;
+}
+#footer a{
+  color:rgba(255,255,255,0.5);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,0.5);
+}
+#footer:before{
+  content:'';
+  display: block;
+  margin:2rem auto;
+  width:10rem;
+  border-top:1px solid rgba(255,255,255,0.2);
+  margin-bottom:3rem;
+}
+
+@media(max-width:480px){
+   #main .thumbnails {
+        display: block;
+  }
+}

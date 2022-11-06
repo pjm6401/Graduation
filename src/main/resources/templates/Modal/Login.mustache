@@ -1,0 +1,30 @@
+<div class = "modal hidden">
+    <div class="modal__overlay"></div>
+    <div class ="modal__content">
+        <div class = "formdiv">
+            <div class="text-center">
+                <main class="form-signin" >
+                    <form action="/Login/create" method="post" enctype="multipart/form-data">
+                        <img class="mb-4" src="/Image/booktop1.png" alt="" width="72" height="57">
+                        <h1 class="h3 mb-3 fw-normal text-dark">로그인</h1>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="ID" name="ID">
+                            <hr>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="PW" name="PW">
+                        </div>
+                        <div class="hidden">
+                            <input type="text" class="form-control" id="check" placeholder="location" name="location" value="">
+                            <script src="/JS/LoginSubmit.js"></script>
+                        </div>
+                        <button type="submit" class="w-100 btn btn-lg btn-primary" id="send" onclick="location.href='/Login/create'">로그인</button>
+                        <div class="findPw">
+                            <a class="p-2 link-secondary" href="#">비밀번호를 까먹으셨나요?</a>
+                        </div>
+                    </form>
+                </main>
+                </div>
+        </div>
+    </div>
+</div>

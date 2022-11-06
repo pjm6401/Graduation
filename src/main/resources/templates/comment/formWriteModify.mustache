@@ -1,0 +1,40 @@
+<br/>
+<div class = "modal hidden">
+    <div class="modal__overlay"></div>
+    <div class ="modal__content">
+        <div class="card">
+            <div class="card-header bi bi-chat-right-dots"> Write a Comment</div>
+                {{! 댓글작성 부분}}
+                {{#user}}
+                    {{#List}}
+                        <form action="/modify/write/comment" method="post"  enctype="multipart/form-data">
+                        <input type="hidden" id="postsId" name="user" value="{{ID}}">
+                        <input type="hidden" id="postsId" name="idx" value="{{idx}}">
+                            <input type="hidden" id="postsId" name="write_id" value="{{write_id}}">
+                            <input type="hidden" id="postsId" name="number" value="{{writeview.idx}}">
+                        <div class="card-body">
+                            <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>
+                        </div><div class="card-footer">
+                            <button type="submit" id="btn-comment-save" class="btn btn-outline-primary bi bi-pencil-square">등록</button>
+                        </div>
+                        </form>
+                    {{/List}}
+                {{/user}}
+                {{#Manager}}
+                    {{#List}}
+                    <form action="/modify/main/comment/{{ID}}/{{idx}}/{{write_id}}/{{writeview.idx}}" method="post"  enctype="multipart/form-data">
+                        <input type="hidden" id="postsId" name="write_id" value="{{ID}}">
+                        <input type="hidden" id="postsId" name="number" value="{{writeview.idx}}">
+                        <div class="card-body">
+                            <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>
+                        </div><div class="card-footer">
+                        <button type="submit" id="btn-comment-save" class="btn btn-outline-primary bi bi-pencil-square">등록</button>
+                    </div>
+                    </form>
+                    {{/List}}
+                {{/Manager}}
+        </div>
+    </div>
+</div>
+<hr>
+

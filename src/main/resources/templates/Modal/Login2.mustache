@@ -1,0 +1,25 @@
+<div class = "modal hidden">
+    <div class="modal__overlay"></div>
+        <div class ="modal__content">
+            <link href="/css/login2.css" rel="stylesheet">
+            <div class="center">
+                <h1>Login</h1>
+                <form action="/Login/create" method="post" enctype="multipart/form-data">
+                    <div class="txt_field">
+                        <input type="text" name="ID" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="password" name="PW" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="hidden">
+                        <input type="text" class="form-control" id="check" placeholder="location" name="location" value="">
+                        <script src="/JS/LoginSubmit.js"></script>
+                    </div>
+                    <div class="pass">Forget Password?</div>
+                    <button type="submit" class="go" value="login" onclick="location.href='/Login/create'">Login</button>
+                </form>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사계</title>
+    <link rel= "stylesheet" type="text/css" href="/css/WriteView.css">
+    <base href="/" />
+</head>
+<body>
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+        <span class="avatar"><img src="/Image/booktop2.png" alt="" /></span>
+        <h1>당신과 함께 <strong>새로운 계절</strong>을 나눌 수 있는 <a href="Home.html">사계</a><br><br>
+            <strong>계절의 경험을 나누다.</strong></h1>
+    </header>
+
+    <!-- Main -->
+    <section id="main">
+        <!-- Thumbnails -->
+        <section class="thumbnails">
+            <div id = "board">
+                {{#writeview}}
+                <h3>글쓰기</h3>
+                <form action="WriteUpdate" method="post" enctype="multipart/form-data">
+                    <div class = "form-group">
+                        <label for="title">글 번호</label>
+                        <input type="text" class="form-control-title" id=title name="idx" readonly value="{{idx}}">
+                        <label for="title">제목</label>
+                        <input type="text" class="form-control-title" id=title name="title"  value="{{writeview.title}}">
+                    </div>
+                    <div id="root">
+                        <h2 class="title">파일 업로드</h2>
+                        <hr>
+                        <input type="file" name ="file" accept="image/*">
+                    </div>
+                    <div class = "form_group">
+                        <label for="comment">내용 : </label>
+                        <textarea class="form-control" rows="10" id="contnets" name="content" >{{writeview.content}}</textarea>
+                    </div>
+
+                    <div class = "form_group">
+                        <label for="comment">작성자 : </label>
+                        <input type="text" class="form-control-title" id=title name="id" readonly value="{{writeview.id}}">
+                    </div>
+                {{/writeview}}
+                    {{#user}}
+                        <button type="submit" class="btn btn-primary"> 수정하기 </button>
+                    {{/user}}
+                </form>
+
+            </div>
+        </section>
+
+    </section>
+    <script src="JS/LoginModal.js"></script>
+    <script src="JS/RegisterModal.js"></script>
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
+    </footer>
+
+</div>
+
+
+
+</body>
+</html>

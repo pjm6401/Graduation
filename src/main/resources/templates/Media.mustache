@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>사계</title>
+    <link rel= "stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menuicon">
+<label for="menuicon">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+<div class = "sidebar">
+    <div class = logo>
+        <a href="Home.html"><img src="/Image/testimg.jpeg" alt="Logo"></a>
+    </div>
+    <nav id = "nav">
+        <div class =" nav">
+            <nav id = "menu">
+                <ul id = sidemenu>
+                    <li><a href="Main">사계</a></li>
+                    <li><a href="Board">게시판</a></li>
+                    <li><a href="Media">미디어</a></li>
+                    <li><a href="Notice">공지사항</a></li>
+                    <!--로그인 창 html 페이지 아닌 모달창으로 -->
+                    <li><button id = "Loginbtn">로그인</button></li>
+                    <!--Login Modal-->
+                    {{>Modal/Login}}
+                    <!--Register Modal-->
+                    <li><button id = "Registerbtn">회원가입</button></li>
+                    {{>Modal/Register}}
+                </ul>
+            </nav>
+
+        </div>
+    </nav>
+
+</div>
+<div class="top">
+    <img src="Image/test2.png">
+</div>
+<div class="bottom">
+    <img src="Image/testimg.jpeg">
+</div>
+<script src="JS/LoginModal.js"></script>
+<script src="JS/RegisterModal.js"></script>
+</body>
+</html>

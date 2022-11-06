@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>사계</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template -->
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/ui.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8dc96774c.js" crossorigin="anonymous"></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+{{>Nav/Nav}}
+<body>
+
+<main class="container">
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-trasparent">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">계절을 여행하는 메거진</h1>
+            <p class="lead my-3">한 주에 한곳, 계절별, 월별 여행지를 소개합니다.</p>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-dark">메거진</strong>
+                    <h3 class="mb-0 ">{{Main.title}}</h3>
+                    <div class="mb-1 text-muted">{{Main.write_time}}</div>
+                    <p class="card-text mb-auto">{{Main.des}}</p>
+                    <a href="/MainBoardView/{{Main.idx}}" class="stretched-link">더 보러가기</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="{{Main.file_path1}}" width="250" height="250">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-dark">게시판</strong>
+                    <h3 class="mb-0">{{Board.title}}</h3>
+                    <div class="mb-1 text-muted">{{Board.write_time}}</div>
+                    <p class="mb-auto">{{Board.content}}</p>
+                    <a href="/WriteView/{{Board.idx}}" class="stretched-link">더 보러가기</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    {{#Board.file_path}}
+                        <img src="{{Board.file_path}}" width="250" height="250">
+                    {{/Board.file_path}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                四季 || 여행하다
+            </h3>
+
+            <article class="blog-post">
+                <h2 class="blog-post-title">계절을 여행하다</h2>
+                <p>4계절, 월로 구분하여 한 주에 하나, 월 평균 약 4개의 여행지를 소개해 줍니다. 바쁜 시간을 고려하여 지역 전체를 소개하기 보단 세부적인 지역 하나, 사진 세장으로 짧고 간단하게 소개합니다.</p>
+                <hr>
+                <p>게시판을 이용해보세요! 포스팅을 보는것 뿐만 아닌 스스로 간 좋았던 여행지를 사진과 함께 직접 추천해보세요!</p>
+                <h2>캘린더</h2>
+                <p>캘린더를 이용하여 여행 계획을 작성해 보세요!</p>
+                <p>여행 일정 예상 경비 등을 작성하고 다운로드 받아서 상세한 계획을 짜보세요!</p>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;" >
+                <div class="p-4 mb-3 bg-light rounded" id = "info">
+                    <div>
+                        <h4 class="fst-italic text-dark">오늘</h4>
+                        <p class="mb-0 text-dark">{{Time}}</p>
+                    </div>
+                    <div class="weather" >
+                        <i class="{{WeatherIcon}}"  style="font-size : 50px"></i>
+                        <span style="font-size : 20px">{{Weather}}</span>
+                        <i class="{{TempIcon}}" style="font-size : 50px"></i>
+                        <span style="font-size : 20px">{{Temp}}°C</span>
+                    </div>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="fst-italic">2022</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">1월 2022</a></li>
+                        <li><a href="#">2월 2022</a></li>
+                        <li><a href="#">3월 2022</a></li>
+                        <li><a href="#">4월 2022</a></li>
+                        <li><a href="#">5월 2022</a></li>
+                        <li><a href="#">6월 2022</a></li>
+                        <li><a href="#">7월 2022</a></li>
+                        <li><a href="#">8월 2022</a></li>
+                        <li><a href="#">9월 2022</a></li>
+                        <li><a href="#">10월 2022</a></li>
+                        <li><a href="#">11월 2022</a></li>
+                        <li><a href="#">12월 2022</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="blog-footer">
+    <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/" class="link-secondary">JeongMin Park.</a> ::Instragram </p>
+</footer>
+<script src="JS/FinalLogin.js"></script>
+<script src="JS/RegisterModal.js"></script>
+</body>
+</html>

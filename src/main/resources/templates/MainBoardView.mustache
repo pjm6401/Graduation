@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사계</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel= "stylesheet" type="text/css" href="/css/MainBoardView.css">
+    <link href="/css/headers.css" rel="stylesheet">
+    <link href="/css/ui.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8dc96774c.js" crossorigin="anonymous"></script>
+    {{>Nav/Nav}}
+</head>
+<body>
+<main>
+    {{#MainWriteview}}
+    <div class="container marketing">
+        <hr>
+        <div class = "form-group1">
+            <label for="title">제목 : </label>
+            <input type="text" class="form-control-title" id=title name="title" readonly value="{{MainWriteview.title}}">
+        </div>
+        <hr>
+        <div class = "form-g">
+            <label for="des" >여행지역 : </label>
+            <input type="text" class="" id=title name="des" style="margin-right : 20px" readonly value="{{MainWriteview.des}}">
+            <label for="season"> 月 : </label>
+            <input type="text" class="" id=title name="season" readonly value="{{MainWriteview.month}}">
+        </div>
+        <hr>
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col" width ="500" height="500" id ="weather">
+                <h2 style="text-align : center">날씨</h2>
+                <hr>
+                <div class="weather" style="text-align : center">
+                    <i class="{{Weather.Icon}}" style="font-size : 50px"></i>
+                    <span>날씨 : {{Weather.Main}}</span>
+                    <hr>
+                </div>
+                <div class="temp" style="text-align : center">
+                    <i class="{{Weather.TempIcon}}" style="font-size : 50px"></i>
+                    <span style="margin-right : 20px">기온 : {{Weather.Temp}}°C</span>
+                    <span>체감 온도 : {{Weather.Feel_Temp}}°C</span>
+                    <hr>
+                </div>
+                <div class="place" style="text-align : center">
+                    <i class="fa-solid fa-location-dot" style="font-size : 50px"></i>
+                    <span>위치 : {{Weather.Place}}</span>
+                </div>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col" id="map" width ="500" height="500" >
+                <h2 style="text-align : center">지도</h2>
+                <hr>
+                <div id ="map" class="show_map" style="width: 80%; height: 80%;">
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZUdN1MwmglPhlNgkPEKPHOGVfjYKiLg&callback=initMap&region=kr"></script>
+                    <script>
+                        var map;
+                        function initMap() {
+                        var des = { lat: {{MainWriteview.lat}}, lng: {{MainWriteview.lng}} };
+                        map = new google.maps.Map( document.getElementById('map'), {
+                            zoom: 15,
+                            center: des
+                        });
+
+                        var mainMarker = new google.maps.Marker({
+                            position: des,
+                            map: map,
+                            label: {
+                            text: "{{MainWriteview.des}}",
+                            color: "#C70E20"
+                            },
+                        });
+
+                        }
+                    </script>
+                </div>
+            </div><!-- /.col-lg-4 -->
+
+        </div><!-- /.row -->
+        <!-- START THE FEATURETTES -->
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <p class="lead">{{MainWriteview.content1}}</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{MainWriteview.file_path1}}"  width ="400" height="400" />
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <p class="lead">{{MainWriteview.content2}}</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+               <img src="{{MainWriteview.file_path2}}"  width ="400" height="400" />
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <p class="lead">{{MainWriteview.content3}}</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{MainWriteview.file_path3}}"  width ="400" height="400" />
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+    {{/MainWriteview}}
+        <!-- /END THE FEATURETTES -->
+        {{!Buttons}}
+    {{! Comments }}
+    {{>comment/list}}
+    {{>comment/form}}
+    {{#Manager}}
+        <div class="delete">
+            <button class="btn btn-outline-primary bi bi-pencil-square" onclick="location.href='/delete/main/write/{{MainWriteview.idx}}'">삭제</button>
+        </div>
+    {{/Manager}}
+    </div><!-- /.container -->
+
+</main>
+
+<!-- Wrapper -->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
+    </footer>
+
+<script src="/JS/modify.js"></script>
+<script src="/JS/FinalLogin.js"></script>
+<script src="/JS/RegisterModal.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+<script src="/JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>
