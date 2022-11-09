@@ -11,4 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface WriteRepository extends JpaRepository<WriteData, String> {
         Page<WriteData> findByTitleContaining (String search, Pageable pageable); // title 포함하는
+        Page<WriteData> findById (String id, Pageable pageable); // 작성자로 찾는다
 }

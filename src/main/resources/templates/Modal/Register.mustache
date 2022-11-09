@@ -1,34 +1,33 @@
 <div class = "Registermodal hidden" id ="Registermodal">
     <div class="Registermodal__overlay"></div>
     <div class ="Registermodal__content">
+        <link href="/css/login2.css" rel="stylesheet">
         <div class = "formdiv">
-            <div class="text-center">
+            <div class="center">
                 <main class="form-signin" >
+                    <h1>회원가입</h1>
                     <form action="/Register/create"  method="post">
-                        <img class="mb-4" src="/Image/booktop1.png" alt="" width="72" height="57">
-                        <h1 class="h3 mb-3 fw-normal text-dark">회원가입</h1>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="ID" name="ID">
+                        <div class="txt_field">
+                            <input type="text" name="ID" required>
+                            <label>Username</label>
                         </div>
-                        <hr>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="PW" name="PW">
-                    </div>
-                        <hr>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingPassword" placeholder="NAME" name="name">
-                    </div>
-                        <hr>
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingPassword" placeholder="abc@naver.com" name="email">
-                    </div>
-                        <hr>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingPassword" placeholder="01012345678" name="phone" >
-                    </div>
-                        <hr>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit" id = "Registerend">회원가입</button>
-                    <br>
+                        <div class="txt_field">
+                            <input type="password" name="PW" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="txt_field">
+                            <input type="text" name="name"required>
+                            <label>Name</label>
+                        </div>
+                        <div class="txt_field">
+                            <input type="email" name="email"required>
+                            <label>E-mail</label>
+                        </div>
+                        <div class="txt_field">
+                            <input type="text" name="phone" required>
+                            <label>Phone</label>
+                        </div>
+                        <button class="go" type="submit" id = "Registerend">회원가입</button>
                 </form>
                 </main>
             </div>

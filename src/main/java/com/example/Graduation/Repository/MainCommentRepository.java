@@ -5,6 +5,7 @@ package com.example.Graduation.Repository;
 import com.example.Graduation.Entity.MainCommentData;
 
 import com.example.Graduation.Entity.MainWriteData;
+import com.example.Graduation.Entity.WriteCommentData;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 public interface MainCommentRepository extends JpaRepository<MainCommentData, String> {
     Page<MainCommentData> findByNumber (String Number, Pageable pageable);
-
+    Page<MainCommentData> findByWrite_id(String id, Pageable pageable);
     MainCommentData findByIdx(String idx);
     MainCommentData findByNumber(String Number);
     MainCommentData deleteByNumber(String Number);

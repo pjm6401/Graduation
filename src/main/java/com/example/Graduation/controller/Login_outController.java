@@ -28,7 +28,7 @@ public class Login_outController {
         String pw = loginForm.getPW();
         String location = loginForm.getLocation();
         RegisterData user = registerRepository.findByID(id);
-        if(user == null || !loginForm.getID().equals(id)){
+        if(user == null || !user.getID().equals(id)){
             System.out.println("ID가 다릅니다");
             model.addAttribute("message","ID가 없거나 다릅니다.");
             model.addAttribute("returnurl",location);
@@ -45,16 +45,14 @@ public class Login_outController {
                 session.setAttribute("Manager", user);
                 System.out.println("로그인 성공. 매니저님 환영합니다");
                 model.addAttribute("message","로그인 성공. 매니저님 환영합니다.");
-                model.addAttribute("returnurl",location);
-                return "/util/message";
             }
             else {
                 session.setAttribute("user", user);
                 System.out.println("로그인 성공.");
                 model.addAttribute("message","로그인 성공. 환영합니다.");
-                model.addAttribute("returnurl",location);
-                return "/util/message";
             }
+            model.addAttribute("returnurl",location);
+            return "/util/message";
         }
     }
 

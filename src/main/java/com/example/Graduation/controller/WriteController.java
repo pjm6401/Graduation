@@ -80,7 +80,7 @@ public class WriteController {
         System.out.println("글 등록 완료");
         String redirect = writeCommentData.getNumber();
         writeService.CommentWrite(writeCommentData);
-        model.addAttribute("message","댓 등록 완료");
+        model.addAttribute("message","댓글 등록 완료");
         model.addAttribute("returnurl","WriteView/"+writeService.WriteView(redirect).getIdx());
         return "/util/message";
     }

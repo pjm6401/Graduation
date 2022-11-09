@@ -61,9 +61,15 @@ public class WriteService {
     public Page<WriteData> boardList(Pageable pageable){
         return writeRepository.findAll(pageable);
     }
+    public Page<WriteData> boardListByID(String id,Pageable pageable){
+        return writeRepository.findById(id,pageable);
+    }
     //Board 특정 개시글 댓글 불러오기
     public Page<WriteCommentData> WriteCommentList(String number, Pageable pageable) {
         return writeCommentDataRepository.findByNumber(number,pageable);
+    }
+    public Page<WriteCommentData> WriteCommentListById(String id, Pageable pageable) {
+        return writeCommentDataRepository.findByWrite_Id(id,pageable);
     }
     //특정 게시글 검색
     public Page<WriteData> WirteSearchlist(String search, Pageable pageable){

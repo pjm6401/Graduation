@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface WriteCommentDataRepository extends JpaRepository<WriteCommentData, String> {
     Page<WriteCommentData> findByNumber(String number, Pageable pageable);
-
+    Page<WriteCommentData> findByWrite_Id(String id, Pageable pageable);
     WriteCommentData findByIdx(String idx);
 
     WriteCommentData deleteByNumber(String Number);
