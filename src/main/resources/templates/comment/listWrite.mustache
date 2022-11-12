@@ -6,9 +6,9 @@
         {{#List}}
             <li class="list-group-item">
                 <span>
-                    <span style="font-size: small">{{write_id}}</span>
+                    <span style="font-size: small">{{userId}}</span>
                     <span style="font-size: xx-small">{{write_time}}</span>&nbsp;
-                    <button class="badge bi bi-trash" onclick="location.href='/delete/write/comment/{{ID}}/{{idx}}/{{write_id}}/{{writeview.idx}}'">삭제</button>
+                    <button class="badge bi bi-trash" onclick="location.href='/delete/write/comment/{{ID}}/{{idx}}/{{userId}}/{{writeview.idx}}'">삭제</button>
                     <button class="badge bi bi-pencil-square" id = "WriteModify_comment_btn">수정</button>
                     {{>comment/formWriteModify}}
                 </span>
@@ -36,9 +36,9 @@
             {{#List}}
                 <li class="list-group-item">
                 <span>
-                    <span style="font-size: small">{{write_id}}</span>
+                    <span style="font-size: small">{{userId}}</span>
                     <span style="font-size: xx-small">{{write_time}}</span>&nbsp;
-                    <button class="badge bi bi-trash" onclick="location.href='/delete/write/comment/{{ID}}/{{idx}}/{{write_id}}/{{writeview.idx}}'">삭제</button>
+                    <button class="badge bi bi-trash" onclick="location.href='/delete/write/comment/{{ID}}/{{idx}}/{{userId}}/{{writeview.idx}}'">삭제</button>
                     <button class="badge bi bi-pencil-square" id = "WriteModify_comment_btn">수정</button>
                     {{>comment/formWriteModify}}
                 </span>
@@ -57,8 +57,5 @@
                 <hr>
             </td>
         </div>
-    {{/Manager}}
-    {{^Manager}}
-        <div class="card-body" style="font-size: small"><strong>로그인</strong> 을 하시면 댓글을 볼 수 볼습니다.</div>
     {{/Manager}}
 </div>

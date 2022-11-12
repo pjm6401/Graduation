@@ -10,7 +10,7 @@
                         <form action="/modify/write/comment" method="post"  enctype="multipart/form-data">
                         <input type="hidden" id="postsId" name="user" value="{{ID}}">
                         <input type="hidden" id="postsId" name="idx" value="{{idx}}">
-                            <input type="hidden" id="postsId" name="write_id" value="{{write_id}}">
+                            <input type="hidden" id="postsId" name="userId" value="{{userId}}">
                             <input type="hidden" id="postsId" name="number" value="{{writeview.idx}}">
                         <div class="card-body">
                             <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>
@@ -22,8 +22,10 @@
                 {{/user}}
                 {{#Manager}}
                     {{#List}}
-                    <form action="/modify/main/comment/{{ID}}/{{idx}}/{{write_id}}/{{writeview.idx}}" method="post"  enctype="multipart/form-data">
-                        <input type="hidden" id="postsId" name="write_id" value="{{ID}}">
+                    <form action="/modify/write/comment" method="post"  enctype="multipart/form-data">
+                        <input type="hidden" id="postsId" name="user" value="{{ID}}">
+                        <input type="hidden" id="postsId" name="idx" value="{{idx}}">
+                        <input type="hidden" id="postsId" name="userId" value="{{userId}}">
                         <input type="hidden" id="postsId" name="number" value="{{writeview.idx}}">
                         <div class="card-body">
                             <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>

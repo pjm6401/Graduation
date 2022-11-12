@@ -24,7 +24,7 @@ public class WriteCommentData {
     @NotNull
     private String comment; // 댓글 내용
     @NotNull
-    private String write_id; // 작성자
+    private String userId; // 작성자
 
     private String write_time;
 }

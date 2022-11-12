@@ -69,7 +69,7 @@ public class WriteService {
         return writeCommentDataRepository.findByNumber(number,pageable);
     }
     public Page<WriteCommentData> WriteCommentListById(String id, Pageable pageable) {
-        return writeCommentDataRepository.findByWrite_Id(id,pageable);
+        return writeCommentDataRepository.findByUserId(id,pageable);
     }
     //특정 게시글 검색
     public Page<WriteData> WirteSearchlist(String search, Pageable pageable){

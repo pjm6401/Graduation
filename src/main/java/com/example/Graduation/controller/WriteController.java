@@ -89,7 +89,7 @@ public class WriteController {
     public String modifyWriteComment(Model model, CommentForm commentForm, WriteCommentData writeCommentData){
         String id = commentForm.getUser(); // session id
         String idx = commentForm.getIdx(); // 댓글 번호
-        String write_id = commentForm.getWrite_id(); // 작성 id
+        String write_id = commentForm.getUserId(); // 작성 id
         String redirect = commentForm.getNumber(); // 다시 돌아갈 주소, 현재 글 idx
         boolean check = writeService.modifyComment(id,idx,write_id,writeCommentData);
         if(check){

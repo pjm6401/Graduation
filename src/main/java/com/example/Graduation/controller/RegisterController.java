@@ -114,7 +114,7 @@ public class RegisterController {
         model.addAttribute("WCommentListNextPage",WCommentListNextPage);
         model.addAttribute("MCommentListNextPage",MCommentListNextPage);
         model.addAttribute("UserInfo",registerRepository.findByID(id));
-        return null;
+        return "MyPage";
     }
 }
 

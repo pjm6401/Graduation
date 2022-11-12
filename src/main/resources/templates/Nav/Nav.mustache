@@ -22,7 +22,7 @@
                 {{/Manager}}
             {{/user}}
             {{#user}}
-                <a class="btn btn-light" href="MyPage/{{ID}}">{{ID}}</a>
+                <button class="btn btn-light" onclick="location.href='/MyPage/{{ID}}'">{{ID}}</button>
                 <a class="btn btn-outline-light me-2" href="/logout/end" >로그아웃</a>
             {{/user}}
             {{#Manager}}

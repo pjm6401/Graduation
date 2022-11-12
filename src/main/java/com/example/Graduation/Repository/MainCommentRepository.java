@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public interface MainCommentRepository extends JpaRepository<MainCommentData, String> {
     Page<MainCommentData> findByNumber (String Number, Pageable pageable);
-    Page<MainCommentData> findByWrite_id(String id, Pageable pageable);
+    Page<MainCommentData> findByUserId(String id, Pageable pageable);
     MainCommentData findByIdx(String idx);
     MainCommentData findByNumber(String Number);
     MainCommentData deleteByNumber(String Number);

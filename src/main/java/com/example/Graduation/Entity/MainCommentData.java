@@ -25,7 +25,7 @@ public class MainCommentData {
     @NotNull
     private String comment; // 댓글 내용
     @NotNull
-    private String write_id; // 작성자
+    private String userId; // 작성자
 
     private String write_time;
 
@@ -35,7 +35,7 @@ public class MainCommentData {
                 "idx='" + idx + '\'' +
                 ", write='" + number + '\'' +
                 ", comment='" + comment + '\'' +
-                ", user='" + write_id + '\'' +
+                ", user='" + userId + '\'' +
                 ", write_time='" + write_time + '\'' +
                 '}';
     }

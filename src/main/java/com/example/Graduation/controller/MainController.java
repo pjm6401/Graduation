@@ -187,7 +187,7 @@ public class MainController {
         String id = commentForm.getUser(); // session id
         String idx = commentForm.getIdx(); // 댓글 번호
         System.out.println(idx);
-        String write_id = commentForm.getWrite_id(); // 작성 id
+        String write_id = commentForm.getUserId(); // 작성 id
         String redirect = commentForm.getNumber(); // 다시 돌아갈 주소, 현재 글 idx
         boolean check = mainService.ModifyComment(id,idx,write_id,mainCommentData);
         if(check){

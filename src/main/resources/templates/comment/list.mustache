@@ -6,10 +6,10 @@
         {{#List}}
             <li class="list-group-item">
                 <span>
-                    <span style="font-size: small">{{write_id}}</span>
+                    <span style="font-size: small">{{userId}}</span>
                     <span style="font-size: xx-small">{{write_time}}</span>&nbsp;
                     <!-- ID : user 의 아이디 , idx : 댓글 idx, write_id : 작성자, MainWriteview.idx : return-->
-                    <button class="badge bi bi-trash" onclick="location.href='/delete/main/comment/{{ID}}/{{idx}}/{{write_id}}/{{MainWriteview.idx}}'">삭제</button>
+                    <button class="badge bi bi-trash" onclick="location.href='/delete/main/comment/{{ID}}/{{idx}}/{{userId}}/{{MainWriteview.idx}}'">삭제</button>
                     <button class="badge bi bi-pencil-square" id = "modify_comment_btn">수정</button>
                     {{>comment/formModify}}
                 </span>
@@ -34,10 +34,10 @@
             {{#List}}
                 <li class="list-group-item">
                 <span>
-                    <span style="font-size: small">{{write_id}}</span>
+                    <span style="font-size: small">{{userId}}</span>
                     <span style="font-size: xx-small">{{write_time}}</span>&nbsp;
                     <!-- ID : user 의 아이디 , idx : 댓글 idx, write_id : 작성자, MainWriteview.idx : return-->
-                    <button class="badge bi bi-trash" onclick="location.href='/delete/main/comment/{{ID}}/{{idx}}/{{write_id}}/{{MainWriteview.idx}}'">삭제</button>
+                    <button class="badge bi bi-trash" onclick="location.href='/delete/main/comment/{{ID}}/{{idx}}/{{userId}}/{{MainWriteview.idx}}'">삭제</button>
                     <button class="badge bi bi-pencil-square" id = "modify_comment_btn">수정</button>
                     {{>comment/formModify}}
                 </span>
@@ -57,7 +57,5 @@
             </td>
         </div>
     {{/Manager}}
-    {{^Manager}}
-        <div class="card-body" style="font-size: small"><strong>로그인</strong> 을 하시면 댓글을 볼 수 볼습니다.</div>
-    {{/Manager}}
+
 </div>

@@ -132,7 +132,7 @@ public class MainService {
     }
     //main id 기준 댓글 불러오기
     public Page<MainCommentData> MainCommentListById(String id, Pageable pageable) {
-        return mainCommentRepository.findByWrite_id(id,pageable);
+        return mainCommentRepository.findByUserId(id,pageable);
     }
     //특정 개시글 삭제
     public void writeDelete(String idx){

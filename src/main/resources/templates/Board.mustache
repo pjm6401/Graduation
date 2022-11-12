@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>사계</title>
-
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
     <link href="/css/headers.css" rel="stylesheet">
     <link href="/css/ui.css" rel="stylesheet">
-    <link rel= "stylesheet" type="text/css" href="/css/Board.css">
+    <link rel="stylesheet" href="/css/BoardFinal.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/Main.css">
 
 </head>
 <body>
@@ -21,57 +22,59 @@
         <h1>당신과 함께 <strong>새로운 계절</strong>을 나눌 수 있는 <a href="Home">사계</a><br><br>
             <strong>계절의 경험을 나누다.</strong></h1>
     </header>
-
+</div>
     <!-- Main -->
-    <section id="main">
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>게시판</strong>
+            <p>각자의 경험을 적어보세요!</p>
+        </div>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">번호</div>
+                    <div class="title">제목</div>
+                    <div class="writer">글쓴이</div>
+                    <div class="date">작성일</div>
+                </div>
+                {{#List}}
+                    <div>
+                        <div class="num">{{idx}}</div>
+                        <div class="title"><a href="WriteView/{{idx}}">{{title}}</a></div>
+                        <div class="writer">{{id}}</div>
+                        <div class="date">{{write_time}}</div>
+                    </div>
+                {{/List}}
+                {{#page}}
+                    <div class="board_page">
+                        <a href="Board?page={{prePage}}" class="bt prev"><</a>
+                        <a href="Board?page={{page}}" class="num on">1</a>
+                        <a href="Board?page={{nextPage}}" class="bt next">></a>
+                    </div>
+                {{/page}}
+                <div class="bottom">
+                    <div class="search">
+                        <form action="Board" method="get" id = "search">
+                            <input type="text" name="search">
+                            <button type="submit" class="btn btn-outline-dark me-2">검색</button>
+                        </form>
+                    </div>
+                    <div class="bt_wrap">
+                        {{#user}}
+                            <a href="Write" class="on">글쓰기 </a>
+                        {{/user}}
+                        <!--<a href="#">수정</a>-->
+                    </div>
 
-        <!-- Thumbnails -->
-        <section class="thumbnails">
-            <div id = "board">
-                <table  >
-                    <tr id = head>
-                        <th colspan="2">제목</th>
-                        <th>작성자</th>
-                        <th>작성일</th>
-                    </tr>
-                    {{#List}}
-                    <tr>
-                        <td id="num"></td>
-                        <td><a href="WriteView/{{idx}}">{{title}}</a></td>
-                        <td>{{id}}</td>
-                        <td>{{write_time}}</td>
-                    </tr>
-                    {{/List}}
-                    {{#user}}
-                    <tr id=page>
-                        <td colspan="4">
-                            <a href="Write">글쓰기 </a>
-                        </td>
-                    </tr>
-                    {{/user}}
-                    <tr id=page>
-                        <td colspan="4" >
-                            {{#page}}
-                                <a href="Board?page={{prePage}}">이전</a>
-                                <a href="Board?page={{page}}">{{nowPage}}</a>
-                                <a href="Board?page={{nextPage}}">다음</a>
-                            {{/page}}
-                            <hr>
-                            <form action="Board" method="get" id = "search">
-                                <input type="text" name="search">
-                                <button type="submit" class="btn btn-outline-light me-2">검색</button>
-                            </form>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-    </section>
+                </div>
+        </div>
+    </div>
     <!-- Footer -->
+
+</div>
     <footer id="footer">
         <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
     </footer>
-</div>
 
 <script src="JS/FinalLogin.js"></script>
 <script src="JS/RegisterModal.js"></script>

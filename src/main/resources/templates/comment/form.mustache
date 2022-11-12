@@ -4,7 +4,7 @@
     {{! 댓글작성 부분}}
     <form action="MainComment/create" method="post"  enctype="multipart/form-data">
         {{#user}}
-            <input type="hidden" id="postsId" name="write_id" value="{{ID}}">
+            <input type="hidden" id="postsId" name="userId" value="{{ID}}">
             <input type="hidden" id="postsId" name="number" value="{{MainWriteview.idx}}">
             <div class="card-body">
                 <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>
@@ -19,7 +19,7 @@
             {{/Manager}}
         {{/user}}
         {{#Manager}}
-            <input type="hidden" id="postsId" name="write_id" value="{{ID}}">
+            <input type="hidden" id="postsId" name="userId" value="{{ID}}">
             <input type="hidden" id="postsId" name="number" value="{{MainWriteview.idx}}">
             <div class="card-body">
                 <textarea id="comment" class="form-control" rows="4" name="comment" placeholder="댓글을 입력하세요"></textarea>
