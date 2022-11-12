@@ -299,7 +299,9 @@ form button{
   font-size:1rem;
   font-weight: 200;
 }
-
+.sub{
+    margin-top:10px;
+}
 #footer{
   text-align: center;
   color:rgba(255,255,255,0.5);

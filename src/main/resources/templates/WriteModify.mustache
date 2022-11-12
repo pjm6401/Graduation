@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>사계</title>
     <link rel= "stylesheet" type="text/css" href="/css/WriteView.css">
-    <base href="/" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link href="/css/headers.css" rel="stylesheet">
+    <link href="/css/ui.css" rel="stylesheet">
+    {{>Nav/Nav}}
 </head>
 <body>
 
@@ -49,7 +52,7 @@
                     </div>
                 {{/writeview}}
                     {{#user}}
-                        <button type="submit" class="btn btn-primary"> 수정하기 </button>
+                        <button type="submit" class="btn btn-outline-dark me-2" style="margin-left:85%"> 수정하기 </button>
                     {{/user}}
                 </form>
 

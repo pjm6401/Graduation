@@ -10,6 +10,10 @@ html {
 ul, li {
     list-style: none;
 }
+.bottom{
+    display:flex;
+    padding-left:43%;
+}
 
 a {
     text-decoration: none;
@@ -23,7 +27,7 @@ a {
     width : 80%;
 }
 .bottom{
-    display:flex;
+
 }
 .date{
     margin-left:15px;
@@ -59,7 +63,8 @@ a {
 }
 
 .bt_wrap a:first-child {
-    margin-left: 0;
+    margin-bottom: 10px;
+    margin-left: 80%;
 }
 
 .bt_wrap a.on {

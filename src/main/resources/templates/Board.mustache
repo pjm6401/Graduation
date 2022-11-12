@@ -29,6 +29,12 @@
             <strong>게시판</strong>
             <p>각자의 경험을 적어보세요!</p>
         </div>
+        <div class="bt_wrap">
+            {{#user}}
+                <a href="Write" class="on">글쓰기 </a>
+            {{/user}}
+            <!--<a href="#">수정</a>-->
+        </div>
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">
@@ -59,12 +65,7 @@
                             <button type="submit" class="btn btn-outline-dark me-2">검색</button>
                         </form>
                     </div>
-                    <div class="bt_wrap">
-                        {{#user}}
-                            <a href="Write" class="on">글쓰기 </a>
-                        {{/user}}
-                        <!--<a href="#">수정</a>-->
-                    </div>
+
 
                 </div>
         </div>

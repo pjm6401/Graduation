@@ -28,9 +28,6 @@
         </td>
     </div>
     {{/user}}
-    {{^user}}
-        <div class="card-body" style="font-size: small"><strong>로그인</strong> 을 하시면 댓글을 볼 수 볼습니다.</div>
-    {{/user}}
     {{#Manager}}
         <ul class="list-group-flush">
             {{#List}}
@@ -58,4 +55,8 @@
             </td>
         </div>
     {{/Manager}}
+    {{^user}}
+        <div class="card-body" style="font-size: small"><strong>로그인</strong> 을 하시면 댓글을 볼 수 볼습니다.</div>
+    {{/user}}
+
 </div>
