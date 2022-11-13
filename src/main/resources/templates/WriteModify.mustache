@@ -29,7 +29,7 @@
             <div id = "board">
                 {{#writeview}}
                 <h3>글쓰기</h3>
-                <form action="WriteUpdate" method="post" enctype="multipart/form-data">
+                <form action="/WriteUpdate" method="post" enctype="multipart/form-data">
                     <div class = "form-group">
                         <label for="title">글 번호</label>
                         <input type="text" class="form-control-title" id=title name="idx" readonly value="{{idx}}">

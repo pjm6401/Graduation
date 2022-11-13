@@ -91,6 +91,7 @@ public class WriteController {
         String idx = commentForm.getIdx(); // 댓글 번호
         String write_id = commentForm.getUserId(); // 작성 id
         String redirect = commentForm.getNumber(); // 다시 돌아갈 주소, 현재 글 idx
+        System.out.println("아이디 : "+id +" " + " write_id");
         boolean check = writeService.modifyComment(id,idx,write_id,writeCommentData);
         if(check){
             System.out.println("수정완료");
@@ -124,6 +125,7 @@ public class WriteController {
     @GetMapping ("/WriteView/{idx}/{id}/{idt}/delete")
     public String writeDelete(@PathVariable String idx,@PathVariable String id,@PathVariable String idt, Model model){
         if(id.equals(idt)){
+            System.out.println(idx);
             writeService.writeDelete(idx);
             System.out.println("글 삭제 완료");
             model.addAttribute("message","게시글 삭제 완료");
@@ -154,7 +156,7 @@ public class WriteController {
         }
     }
     //특정 게시글 업데이트
-    @PostMapping("/WriteUpdate")
+    @PostMapping("WriteUpdate")
     public String writeUpdate(WriteForm writeForm, WriteData writeData, @RequestParam(value = "file" , required = false) MultipartFile file, Model model) throws IOException {
         WriteData writeTemp = writeService.WriteView(writeForm.getIdx());
         writeTemp.setTitle(writeForm.getTitle());
@@ -162,7 +164,7 @@ public class WriteController {
         writeService.write(writeTemp, file);
         System.out.println("글 수정 완료");
         model.addAttribute("message","게시글 수정 완료");
-        model.addAttribute("returnurl","WriteView/"+writeService.WriteView(writeForm.getIdx()).getIdx());
+        model.addAttribute("returnurl","Board");
         return "/util/message";
     }
     //특정 게시글 보기

@@ -27,4 +27,6 @@ public class WriteCommentData {
     private String userId; // 작성자
 
     private String write_time;
+
+
 }

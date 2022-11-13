@@ -9,11 +9,15 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public interface WriteCommentDataRepository extends JpaRepository<WriteCommentData, String> {
     Page<WriteCommentData> findByNumber(String number, Pageable pageable);
     Page<WriteCommentData> findByUserId(String id, Pageable pageable);
     WriteCommentData findByIdx(String idx);
-
-    WriteCommentData deleteByNumber(String Number);
+    @Transactional
+    @Modifying
+    @Query("delete from WriteCommentData w where w.number = ?1")
+    int deleteByNumber(String Number);
     WriteCommentData deleteAllByNumber(String Number);
 }

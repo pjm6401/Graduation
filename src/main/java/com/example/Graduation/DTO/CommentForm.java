@@ -7,11 +7,11 @@ public class CommentForm {
     private String userId;
     private String write_time;
     private String user;
-    public CommentForm(String idx, String number, String comment, String write_id, String write_time,String user) {
+    public CommentForm(String idx, String number, String comment, String userId, String write_time,String user) {
         this.idx = idx;
         this.number = number;
         this.comment = comment;
-        this.userId = write_id;
+        this.userId = userId;
         this.write_time = write_time;
         this.user = user;
     }
@@ -44,7 +44,7 @@ public class CommentForm {
                 "idx=" + idx +
                 ", number='" + number + '\'' +
                 ", comment='" + comment + '\'' +
-                ", write_id='" + userId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", write_time='" + write_time + '\'' +
                 '}';
     }

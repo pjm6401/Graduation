@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -76,9 +77,10 @@ public class WriteService {
         return writeRepository.findByTitleContaining(search, pageable);
     }
     //특정 게시글 삭제
+    @Transactional
     public void writeDelete(String idx){
+        writeCommentDataRepository.deleteByNumber(idx);
         writeRepository.deleteById(idx);
-
         //writeCommentDataRepository.deleteByNumber(idx);
     }
 

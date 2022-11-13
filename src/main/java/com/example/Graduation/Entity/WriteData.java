@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @ToString
@@ -35,7 +37,8 @@ public class WriteData {
 
     private String write_time;
 
-
+    @OneToMany(mappedBy = "number", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MainCommentData> mainCommentDataList = new ArrayList<>();
 
     @Override
     public String toString() {
