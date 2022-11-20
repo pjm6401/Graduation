@@ -33,7 +33,7 @@ public class HomeController {
         model.addAttribute("TempIcon",weatherDTO.getTempIcon());
         model.addAttribute("Time",time);
         model.addAttribute("Main",mainWriteRepository.findById("6").get());
-        model.addAttribute("Board", writeRepository.findById("48").get());
+        model.addAttribute("Board", writeRepository.findById("76").get());
         return "Home"; // /home 이 입력이 된다면 mustache라는 페이지를 가져와서 열어준다
     }
 }

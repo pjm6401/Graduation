@@ -4,8 +4,17 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><button type="button" class="btn btn-light" onclick="location.href='/Home'" style="margin-right : 20px">홈</button></li>
             <li><button type="button" class="btn btn-light" onclick="location.href='/Main' " style="margin-right : 20px">사계</button></li>
-            <li><button type="button" class="btn btn-light" onclick="location.href='/Board' " style="margin-right : 20px">게시판</button></li>
+            <li><button type="button" class="btn btn-light" id="BoardSearch" style="margin-right : 20px">게시판</button></li>
 
+            <div class="BoardBtn show">
+                <div class="middle" style="display : flex">
+                    <li><button type="button" class="btn btn-light" onclick="location.href='/Board/여행기' " style="margin-right : 20px">여행기</button></li>
+                    <li><button type="button" class="btn btn-light" onclick="location.href='/Board/여행지' " style="margin-right : 20px">여행지</button></li>
+                    <li><button type="button" class="btn btn-light" onclick="location.href='/Board/맛집' " style="margin-right : 20px">맛집</button></li>
+                    <li><button type="button" class="btn btn-light" onclick="location.href='/Board/질문' " style="margin-right : 20px">질문</button></li>
+                    <li><button type="button" class="btn btn-light" onclick="location.href='/Board/잡담' " style="margin-right : 20px">잡담</button></li>
+                </div>
+            </div>
             {{#Manager}}
                 <li><button type="button" class="btn btn-light" onclick=""  style="margin-right : 20px">회원 정보 관리</button></li>
 

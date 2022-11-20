@@ -31,7 +31,7 @@
         </div>
         <div class="bt_wrap">
             {{#user}}
-                <a href="Write" class="on">글쓰기 </a>
+                <a href="/Write" class="on">글쓰기 </a>
             {{/user}}
             <!--<a href="#">수정</a>-->
         </div>
@@ -46,16 +46,16 @@
                 {{#List}}
                     <div>
                         <div class="num">{{idx}}</div>
-                        <div class="title"><a href="WriteView/{{idx}}">{{title}}</a></div>
+                        <div class="title"><span>[{{menu}}] </span><a href="/WriteView/{{idx}}">{{title}}</a></div>
                         <div class="writer">{{id}}</div>
                         <div class="date">{{write_time}}</div>
                     </div>
                 {{/List}}
                 {{#page}}
                     <div class="board_page">
-                        <a href="Board?page={{prePage}}" class="bt prev"><</a>
-                        <a href="Board?page={{page}}" class="num on">{{nowPage}}</a>
-                        <a href="Board?page={{nextPage}}" class="bt next">></a>
+                        <a href="/Board/{{pageMenu}}?page={{prePage}}" class="bt prev"><</a>
+                        <a href="/Board/{{pageMenu}}?page={{page}}" class="num on">{{nowPage}}</a>
+                        <a href="/Board/{{pageMenu}}?page={{nextPage}}" class="bt next">></a>
                     </div>
                 {{/page}}
                 <div class="bottom">
@@ -77,8 +77,8 @@
         <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
     </footer>
 
-<script src="JS/FinalLogin.js"></script>
-<script src="JS/RegisterModal.js"></script>
-
+<script src="/JS/FinalLogin.js"></script>
+<script src="/JS/RegisterModal.js"></script>
+<script src="/JS/BoardSearch.js"></script>
 </body>
 </html>

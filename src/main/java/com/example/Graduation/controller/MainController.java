@@ -6,6 +6,7 @@ import com.example.Graduation.Entity.MainCommentData;
 import com.example.Graduation.Entity.MainWriteData;
 import com.example.Graduation.Entity.MainimgData;
 import com.example.Graduation.Repository.MainWriteRepository;
+import com.example.Graduation.Service.APIService;
 import com.example.Graduation.Service.MainService;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -133,7 +134,9 @@ public class MainController {
         int nowPage = list.getPageable().getPageNumber() + 1; // 페이지는 0부터 읽는다
         int prePage = Math.max(page - 1 , 0);
         int nextPage = Math.min(page + 1 , list.getTotalPages()-1);
-
+        APIService apiService = new APIService();
+        String MapAPI = apiService.getMapAPI();
+        model.addAttribute("APIKey", MapAPI);
         model.addAttribute("List", list);
         model.addAttribute("page", page);
         model.addAttribute("nowPage",nowPage);
@@ -145,6 +148,11 @@ public class MainController {
     @GetMapping("/MainWrite")
     public String mainWrite(Model model){
         return "MainWrite";
+    }
+    //main 글작성 페이지
+    @GetMapping("/MainWrite2")
+    public String newPost(Model model){
+        return "MainWrite2";
     }
     //main 글작성 폼
     @PostMapping("/MainWrite/create")

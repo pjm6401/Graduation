@@ -145,4 +145,6 @@
 .findPw{
     margin-top:1vw;
 }
-
+.show{
+     display: none;
+}

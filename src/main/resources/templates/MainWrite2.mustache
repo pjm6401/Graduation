@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사계</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel= "stylesheet" type="text/css" href="/css/MainBoardView.css">
+    <link href="/css/headers.css" rel="stylesheet">
+    <link href="/css/ui.css" rel="stylesheet">
+    {{>Nav/Nav}}
+</head>
+<body>
+<main>
+    <div class="container marketing">
+        <hr>
+        <!-- START THE FEATURETTES -->
+        <form action="MainWrite/create" method="post"  enctype="multipart/form-data">
+        <div id="top">
+            <div class = "form-group1">
+                <label for="title">제목 :</label>
+                <input type="text" class="form-control-title" id=title name="title">
+            </div>
+            <hr>
+            <div class = "form-g">
+                <label for="des">여행지역 :</label>
+                <input type="text" class="" id=title name="des">
+                <label for="month">月 :</label>
+                <input type="text" class="" id=title name="month">
+            </div>
+        </div>
+        <hr>
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <label for="comment" >첫번째 사진 내용 : </label>
+                <textarea class="form-control" rows="10" id="contnets" name="content1"></textarea>
+            </div>
+            <div class="col-md-5">
+                <h2 class="title">파일 업로드</h2>
+                <hr>
+                <input type="file" name ="file1" accept="image/*">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <label for="comment" >두번째 사진 내용 : </label>
+                <textarea class="form-control" rows="10" id="contnets" name="content2"></textarea>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <h2 class="title">파일 업로드</h2>
+                <hr>
+                <input type="file" name ="file2" accept="image/*">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <label for="comment" >세번째 사진 내용 : </label>
+                <textarea class="form-control" rows="10" id="contnets" name="content3"></textarea>
+            </div>
+            <div class="col-md-5">
+                <h2 class="title">파일 업로드</h2>
+                <hr>
+                <input type="file" name ="file3" accept="image/*">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+            <div class="submit">
+                <button type="submit" class="btn btn-primary" id="submit">글쓰기</button>
+            </div>
+        <!-- /END THE FEATURETTES -->
+        </form>
+    </div><!-- /.container -->
+
+</main>
+
+<!-- Wrapper -->
+
+<!-- Footer -->
+<footer id="footer">
+    <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
+</footer>
+
+
+<script src="JS/FinalLogin.js"></script>
+<script src="JS/RegisterModal.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+<script src="JS/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

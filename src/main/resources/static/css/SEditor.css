@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.dropdown-label{
+  font-size : 12px;
+  margin : 10px;
+  font-weight : bold;
+  color : rgb(50, 50, 50);
+  margin-right : 10px;
+  display:inline-block;
+}
+#center_btn{
+    margin-left : 10px;
+}
+.flexEditor{
+    display:flex;
+}
+.hidden {
+    display: none;
+}
+.dropdown{
+  display : inline-block;
+}
+
+.dropbtn_icon{
+  font-family : 'Material Icons';
+}
+.dropbtn{
+  display : block;
+  border : 2px solid rgb(94, 94, 94);
+  border-radius : 4px;
+  background-color: #fcfcfc;
+  font-weight: 400;
+  color : rgb(124, 124, 124);
+  padding : 12px;
+  width :240px;
+  text-align: left;
+  cursor : pointer;
+  font-size : 12px;
+  z-index :1;
+  position : relative;
+}
+.dropdown-content{
+  display : none;
+  font-weight: 400;
+  background-color: #fcfcfc;
+  min-width : 240px;
+  border-radius: 8px;
+  height : 160px;
+  overflow : scroll;
+  box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+}
+.dropdown-content::-webkit-scrollbar{
+  width : 5px;
+  height : 10px;
+}
+.dropdown-content::-webkit-scrollbar-thumb{
+  border-radius : 2px;
+  background-color :rgb(194, 194, 194)
+}
+
+.dropdown-content div{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+.dropdown-content div:hover{
+  background-color: rgb(226, 226, 226);
+}
+
+.dropdown-content.show{
+  display : block;
+}
+.top_content{
+    display: flex;
+}
+.writeForm{
+    margin:0 auto;
+    width : 80%;
+}
+.form-group1{
+    margin-top : 5px;
+    margin-bottom : 5px;
+}
+.form-g{
+    margin-top : 5px;
+    margin-bottom : 5px;
+}
+.form_group{
+    display:inline-block;
+}
+.Write_Id{
+  font-size : 12px;
+  margin : 10px;
+  font-weight : bold;
+  color : rgb(50, 50, 50);
+  margin-right : 10px;
+    border : none;
+    &:focus{
+        outline:none;
+    }
+}
+.form-control-title{
+    border : none;
+    border-bottom : 1px solid black;
+    &:focus{
+        outline:none;
+    }
+}
+.input-title{
+    border : none;
+    border-bottom : 1px solid black;
+    &:focus{
+        outline:none;
+    }
+}
+#smarteditor{
+    background-color: white;
+    height:650px;
+}
+#sform{
+    display:block;
+    width: 100%;
+    margin:0 auto;
+}
+.submits{
+    margin-top:10px;
+    display : flex;
+    justify-content: right;
+}
+.W_title{
+   text-align:center;
+   color : white;
+}

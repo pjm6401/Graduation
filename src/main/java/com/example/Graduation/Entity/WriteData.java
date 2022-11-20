@@ -37,6 +37,8 @@ public class WriteData {
 
     private String write_time;
 
+    private String menu;
+
     @OneToMany(mappedBy = "number", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MainCommentData> mainCommentDataList = new ArrayList<>();
 
@@ -48,6 +50,7 @@ public class WriteData {
                 ", filepath='" + file_path + '\'' +
                 ", content='" + content + '\'' +
                 ", ID='" + id + '\'' +
+                ", menu='" + menu + '\'' +
                 '}';
     }
 

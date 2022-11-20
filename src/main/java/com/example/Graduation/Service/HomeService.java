@@ -5,7 +5,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.Access;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,10 +16,15 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
 public class HomeService {
+
+
+
+
     public static WeatherDTO WeatherCoding() throws IOException, ParseException {
+        APIService apiService = new APIService();
         String lat = "37.27538";
         String lng = "127.05488";
-        String API_KEY = "ecac049f368fc4f5c5989492fcf32e5d";
+        String API_KEY = apiService.getWeatherAPI();
         String API = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&appid="+API_KEY+"&units=metric";
         String[] Weather = new String[7];
         URL url = new URL(API);

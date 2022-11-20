@@ -2,7 +2,6 @@ package com.example.Graduation.controller;
 
 import com.example.Graduation.DTO.CommentForm;
 import com.example.Graduation.DTO.WriteForm;
-import com.example.Graduation.Entity.MainCommentData;
 import com.example.Graduation.Entity.WriteCommentData;
 import com.example.Graduation.Entity.WriteData;
 import com.example.Graduation.Repository.WriteCommentDataRepository;
@@ -13,15 +12,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.security.core.parameters.P;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 
-import javax.persistence.Table;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.lang.constant.Constable;
 
 @Controller
 public class WriteController {
@@ -32,13 +34,14 @@ public class WriteController {
     WriteRepository writeRepository;
     @Autowired
     WriteCommentDataRepository writeCommentDataRepository;
-    @GetMapping("/Board") // 페이지 역순으로 정렬
+    @GetMapping("/Board/{menu}") // 페이지 역순으로 정렬
     public String BoardList(Model model, @PageableDefault(page = 0, size = 10,
-            sort = "idx", direction = Sort.Direction.DESC) Pageable pageable ,String search){
+            sort = "idx", direction = Sort.Direction.DESC) Pageable pageable ,String search, @PathVariable String menu){
         Page<WriteData> list= null;
         Page<WriteData> list_= null;
+        System.out.println(menu);
         if(search == null){
-            list = writeService.boardList(pageable);
+            list = writeService.boardList(menu,pageable);
         }
         else{
             list = writeService.WirteSearchlist(search,pageable);
@@ -49,7 +52,7 @@ public class WriteController {
         int nowPage = list.getPageable().getPageNumber() + 1; // 페이지는 0부터 읽는다
         int prePage = Math.max(page - 1 , 0);
         int nextPage = Math.min(page + 1 , list.getTotalPages()-1);
-
+        model.addAttribute("pageMenu",menu);
         model.addAttribute("List", list);
         model.addAttribute("page", page);
         model.addAttribute("nowPage",nowPage);
@@ -64,13 +67,23 @@ public class WriteController {
     }
 
     //글 작성
+    @GetMapping("/savePost")
+    public String savePost(Model model, WriteData writeData, @RequestParam(value = "files" , required = false) MultipartFile files) throws Exception{
+        System.out.println(writeData.toString());
+        writeService.savePost(writeData,files);
+        model.addAttribute("message","글 등록 완료");
+        model.addAttribute("returnurl","Board");
+        return "/util/message";
+    }
+
     @PostMapping("/Write/create")
     public String newWrite(WriteData writeData, @RequestParam(value = "files" , required = false) MultipartFile files, Model model) throws IOException {
         System.out.println(writeData);
         writeService.write(writeData,files);
+        String menu = writeData.getMenu();
         System.out.println("글 등록 완료");
         model.addAttribute("message","글 등록 완료");
-        model.addAttribute("returnurl","Board");
+        model.addAttribute("returnurl","Board/"+menu);
         return "/util/message";
     }
     //댓글 작성

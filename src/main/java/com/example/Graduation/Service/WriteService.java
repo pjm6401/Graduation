@@ -53,14 +53,37 @@ public class WriteService {
         System.out.println(writeData.toString());
         writeRepository.save(writeData);
     }
+    public void savePost(WriteData writeData, MultipartFile files) throws IOException {
+        //파일경로
+        String projectpath = System.getProperty("user.dir")+"//src//main//resources//static//files";
+        //식별자
+        UUID uuid = UUID.randomUUID();
+        //저장될 파일이름 생성
+        String filename = uuid + "-" + files.getOriginalFilename();
+
+        File saveFile = new File(projectpath,filename);
+        files.transferTo(saveFile);
+        if(filename.contains("JPEG") || filename.contains("GIF")
+                || filename.contains("BMP") || filename.contains("PNG") || filename.contains("jpg")
+                || filename.contains("jpeg") || filename.contains("png")) {
+            writeData.setFile_name(filename);
+            writeData.setFile_path("/files/" + filename);
+        }
+        LocalDate now = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String wirte_time = now.format(formatter);
+        writeData.setWrite_time(wirte_time);
+        System.out.println(writeData.toString());
+        writeRepository.save(writeData);
+    }
     //파일
     //특정 게시글 보기
     public WriteData WriteView(String idx){
         return writeRepository.findById(idx).get();
     }
     //게시글 리스트
-    public Page<WriteData> boardList(Pageable pageable){
-        return writeRepository.findAll(pageable);
+    public Page<WriteData> boardList(String menu,Pageable pageable){
+        return writeRepository.findByMenu(menu,pageable);
     }
     public Page<WriteData> boardListByID(String id,Pageable pageable){
         return writeRepository.findById(id,pageable);

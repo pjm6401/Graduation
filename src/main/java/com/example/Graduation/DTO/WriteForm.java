@@ -17,7 +17,9 @@ public class WriteForm {
 
     private String write_time;
 
-    public WriteForm(String idx, String title, String file_name, String file_path, String content, String id, String write_time) {
+    private String menu;
+
+    public WriteForm(String idx, String title, String file_name, String file_path, String content, String id, String write_time,String menu) {
         this.idx = idx;
         this.title = title;
         this.file_name = file_name;
@@ -25,6 +27,7 @@ public class WriteForm {
         this.content = content;
         this.id = id;
         this.write_time = write_time;
+        this.menu = menu;
     }
 
     public String getIdx() {
@@ -54,4 +57,5 @@ public class WriteForm {
     public String getWrite_time() {
         return write_time;
     }
+    public String getMenu(){ return menu; }
 }

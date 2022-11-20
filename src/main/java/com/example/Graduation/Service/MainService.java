@@ -174,7 +174,8 @@ public class MainService {
     public MainCommentData comment(String idx){return  mainCommentRepository.findByIdx(idx);}
     //위.경도 변환
     public static String[] geoCoding(String location) throws IOException, ParseException {
-        String API_KEY = "AIzaSyA5ZUdN1MwmglPhlNgkPEKPHOGVfjYKiLg";
+        APIService apiService = new APIService();
+        String API_KEY = apiService.getGeoAPI();
         String API = "https://maps.googleapis.com/maps/api/geocode/json?address=" +
                 URLEncoder.encode(location, StandardCharsets.UTF_8) + "&key=" + API_KEY;
         String[] LatLng = new String[2];
@@ -209,8 +210,8 @@ public class MainService {
     }
     //날씨
     public static WeatherDTO WeatherCoding(String lat, String lng) throws IOException, ParseException {
-
-        String API_KEY = "ecac049f368fc4f5c5989492fcf32e5d";
+        APIService apiService = new APIService();
+        String API_KEY = apiService.getWeatherAPI();
         String API = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&appid="+API_KEY+"&units=metric";
         String[] Weather = new String[7];
         URL url = new URL(API);

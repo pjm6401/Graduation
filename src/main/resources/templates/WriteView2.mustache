@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사계</title>
+    <link rel= "stylesheet" type="text/css" href="/css/WriteView.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link href="/css/headers.css" rel="stylesheet">
+    <link href="/css/ui.css" rel="stylesheet">
+    {{>Nav/Nav}}
+</head>
+<body>
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+        <span class="avatar"><img src="/Image/booktop2.png" alt="" /></span>
+        <h1>당신과 함께 <strong>새로운 계절</strong>을 나눌 수 있는 <a href="Home.html">사계</a><br><br>
+            <strong>계절의 경험을 나누다.</strong></h1>
+    </header>
+
+    <!-- Main -->
+    <section id="main">
+        <!-- Thumbnails -->
+        <section class="thumbnails">
+            <div id = "board">
+                {{#writeview}}
+                <form action="Write/create" method="post" enctype="multipart/form-data">
+                    <div class = "form-group">
+                        <label for="title">제목</label>
+                        <input type="text" class="form-control-title" id=title name="title" readonly value="{{writeview.title}}">
+                    </div>
+                    <div id="root">
+                        <h2 class="title">파일 다운로드</h2>
+                        <hr>
+                        {{#file_path}}
+                        <a href="{{writeview.file_path}}" style="color : black">{{writeview.file_path}}</a>
+                        <img src="{{writeview.file_path}}">
+                        {{/file_path}}
+                    </div>
+                    <div class = "form_group">
+                        <label for="comment">내용 : </label>
+                        <textarea class="form-control" rows="10" id="contnets" name="content" readonly placeholder="{{writeview.content}}"></textarea>
+                    </div>
+
+                    <div class = "form_group">
+                        <label for="comment">작성자 : </label>
+                        <input type="text" class="form-control-title" id=title name="id" readonly value="{{writeview.id}}">
+                    </div>
+                {{/writeview}}
+                    {{#user}}
+                        <div class = "btn-group">
+                            <a href="{{idx}}/{{ID}}/{{writeview.id}}/modify" class="btn btn-outline-dark me-2">수정하기</a>
+                            <a href="{{idx}}/{{ID}}/{{writeview.id}}/delete" class="btn btn-outline-dark me-2">삭제하기</a>
+                        </div>
+                    {{/user}}
+                    {{#Manager}}
+                        <div class = "btn-group">
+                            <a href="{{idx}}/{{ID}}/{{writeview.id}}/delete" class="btn btn-outline-dark me-2">삭제하기</a>
+                        </div>
+                    {{/Manager}}
+                </form>
+            </div>
+        </section>
+    </section>
+    <hr>
+    {{>comment/listWrite}}
+    {{>comment/formWrite}}
+    <div class = "btn-group">
+        <a href="/Board" class="btndel hover2">뒤로가기</a>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2022 Graduation Work. Design: <a href="https://www.instagram.com/98p_jm/">JeongMin Park.</a> ::Instragram </p>
+    </footer>
+</div>
+<script src="/JS/WriteModify.js"></script>
+<script src="/JS/WriteModify.js"></script>
+<script src="/JS/FinalLogin.js"></script>
+<script src="/JS/RegisterModal.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+<script src="/JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>
